@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Index page</title>
+{% endblock %}
+    
+{% block content %}
+<div class="cell medium-5" style="margin-top:20px;">
+    <div id="temp">
+    </div>
+</div>
+<div class="cell medium-7" style="margin-top:20px;">
+    <div id="">
+    </div>
+</div>
+<div class="cell medium-5" style="margin-top:50px;">
+    <div id="hum">
+    </div>
+</div>
+<div class="cell medium-7" style="margin-top:50px;">
+    <div id="">
+    </div>
+</div>
+
+<script>
+{% include 'gauge.js' %}
+</script>
+{% endblock %}
