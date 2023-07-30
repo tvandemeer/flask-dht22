@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}
-<title>Index page</title>
+<title>Dashboard</title>
 {% endblock %}
     
 {% block content %}
@@ -9,8 +9,8 @@
     </div>
 </div>
 <div class="cell medium-7" style="margin-top:20px;">
-    <div id="">
-    </div>
+    <canvas id="testChart" width="1000" height="200">
+    </canvas>
 </div>
 <div class="cell medium-5" style="margin-top:50px;">
     <div id="hum">
@@ -23,5 +23,63 @@
 
 <script>
 {% include 'gauge.js' %}
+</script>
+
+<script>
+    setTimeout(function () {
+        var chrt = document.getElementById("testChart").getContext("2d");
+        var chartId = new Chart(chrt, {
+            type: 'line',
+            data: {
+                labels: ["tijd"],
+                datasets: [{
+                    label: "Temperatuur",
+                    data: [],
+                    pointRadius: 2
+                }],
+            },
+            options: {
+                responsive: false,
+                scales: {
+                    y: {
+                        min: 22.0,
+                        max: 28.0,
+                    },
+                    x: {
+                        ticks: {
+                            callback: function(val, index) {
+                                return index % 5 === 0 ? this.getLabelForValue(val) : '';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        setInterval(function() {
+            $.get('/live', function (response) {
+                if (response[1] > 0) {
+                    chartId.data.labels.push(response[0]);
+                    chartId.data.datasets[0].data.push(response[1]);
+                    chartId.update();
+                };
+                if (chartId.data.datasets[0].data.length == 40) {
+                    chartId.data.datasets[0].data.shift();
+                    chartId.data.labels.shift();
+                };
+            });
+        }, 3000)
+    }, 5000);
+
+    //setInterval(function () {
+        //$.get('/live', function (response) {
+            //chartId.data.labels.push(String(response[0]));
+            //chartId.data.datasets[0].data.push(response[1]);
+            //chartId.update();
+        //});
+    //}, 3000);
+    //chartId.data.labels.push('g');
+    //chartId.data.datasets[0].data.push(30);
+    //chartId.update();
+    //}), 5000);
 </script>
 {% endblock %}

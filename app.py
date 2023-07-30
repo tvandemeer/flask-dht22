@@ -3,7 +3,7 @@ import adafruit_dht
 import board
 from random import random
 import json
-from time import time
+from time import time, localtime
 
 
 app = Flask(__name__)
@@ -19,7 +19,9 @@ def index():
 @app.route('/live')
 def live():
     try:
-        created = time() * 1000
+        now = localtime()
+        created = "%s:%s:%s" % (now.tm_hour, now.tm_min, now.tm_sec)
+        # created = time() * 1000
         temp = dht22.temperature
         hum = dht22.humidity
         values = [created, round(temp, 1), round(hum)]
