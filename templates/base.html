@@ -16,6 +16,7 @@
         <script src="{{ url_for('static', filename='js/what-input/what-input.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/motion-ui/motion-ui.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/foundation/foundation.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/vbcanvas/vb-canvas.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/justgage/raphael-min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/justgage/justgage.min.js') }}"></script>
         <script type="module" src="{{ url_for('static', filename='js/chartjs/chart.umd.js') }}"></script>
@@ -23,10 +24,8 @@
             $(document).foundation();
         </script>
 
-        <div class="grid-x grid-margin-x">
         {% block content %}
         {% endblock %}
-        </div>
 
     </body>
 </html>

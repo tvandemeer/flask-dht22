@@ -4,21 +4,32 @@
 {% endblock %}
     
 {% block content %}
-<div class="cell medium-5" style="margin-top:20px;">
-    <div id="temp">
+<div class="grid-x grid-margin-x" style="border-bottom:2px solid #EDEBEB;">
+    <div class="cell text-center" style="margin-top:20px;">
+        <h4>Temperatuur</h4>
+    </div>
+    <div class="cell medium-3" style="margin-top:20px;">
+        <div id="temp">
+        </div>
+    </div>
+    <div class="cell medium-9" style="margin-top:20px;">
+        <canvas id="tempHist" class="responsive-canvas" height="200">
+        </canvas>
     </div>
 </div>
-<div class="cell medium-7" style="margin-top:20px;">
-    <canvas id="tempHist" class="responsive-canvas" height="200">
-    </canvas>
-</div>
-<div class="cell medium-5" style="margin-top:50px;">
-    <div id="hum">
+
+<div class="grid-x grid-margin-x">
+    <div class="cell text-center" style="margin-top:20px;">
+        <h4>Luchtvochtigheid</h4>
     </div>
-</div>
-<div class="cell medium-7" style="margin-top:20px;">
-    <canvas id="humHist" class="responsive-canvas" height="200">
-    </canvas
+    <div class="cell medium-3" style="margin-top:50px;">
+        <div id="hum">
+        </div>
+    </div>
+    <div class="cell medium-9" style="margin-top:20px;">
+        <canvas id="humHist" class="responsive-canvas" height="200">
+        </canvas
+    </div>
 </div>
 
 <script>

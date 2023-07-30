@@ -14,11 +14,16 @@ setTimeout(function () {
             responsive: false,
             scales: {
                 y: {
-                    min: 22.0,
-                    max: 28.0,
+                    min: 23.0,
+                    max: 27.0,
                     title: {
                         display: true,
                         text: 'graden Celsius'
+                    },
+                    ticks: {
+                        stepSize: 0.5,
+                        precision: 1,
+                        autoSkip: false
                     }
                 },
                 x: {
@@ -73,11 +78,11 @@ setTimeout(function () {
             responsive: false,
             scales: {
                 y: {
-                    min: 30.0,
+                    min: 40.0,
                     max: 70.0,
                     title: {
                         display: true,
-                        text: '%'
+                        text: 'procent'
                     }
                 },
                 x: {

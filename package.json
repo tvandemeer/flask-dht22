@@ -2,6 +2,7 @@
   "dependencies": {
     "chart.js": "^4.3.2",
     "foundation-sites": "^6.7.5",
-    "justgage": "^1.6.1"
+    "justgage": "^1.6.1",
+    "vb-canvas": "^0.1.8"
   }
 }
