@@ -1,0 +1,12 @@
+[project]
+name = "Flask-DHT22"
+version = "1.0.0"
+description = "Graphing DHT22 data"
+dependencies = [
+    "flask",
+]
+
+[build-system]
+requires = ["flit_core<4"]
+build-backend = "flit_core.buildapi"
+

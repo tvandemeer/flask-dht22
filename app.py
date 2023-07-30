@@ -24,7 +24,7 @@ def live():
         # created = time() * 1000
         temp = dht22.temperature
         hum = dht22.humidity
-        values = [created, round(temp, 1), round(hum)]
+        values = [created, round(temp, 1), round(hum, 1)]
     except:
         print('Exception occurred')
         values = []
