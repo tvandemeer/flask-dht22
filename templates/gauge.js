@@ -1,8 +1,8 @@
 var tempGauge = new JustGage({
     id: "temp",
     value: 0,
-    min: 22,
-    max: 28,
+    min: 23,
+    max: 27,
     decimals: 1,
     gaugeWidthScale: 0.6,
     label: 'Temperatuur (graden Celsius)'

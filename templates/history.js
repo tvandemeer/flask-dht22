@@ -54,6 +54,8 @@ setTimeout(function () {
             };
             if (chartId.data.datasets[0].data.length == 100) {
                 chartId.data.datasets[0].data.shift();
+            };
+            if (chartId.data.labels.length == 100) {
                 chartId.data.labels.shift();
             };
         });
@@ -113,8 +115,10 @@ setTimeout(function () {
             };
             if (chartId.data.datasets[0].data.length == 100) {
                 chartId.data.datasets[0].data.shift();
+            };
+            if (chartId.data.labels.length == 100) {
                 chartId.data.labels.shift();
             };
         });
-    }, 3000)
+    }, 10000)
 }, 7000);

@@ -1,0 +1,9 @@
+1.  mkdir <project> && cd <project>
+2.  virtualenv .venv && source .venv/bin/activate
+3.  sudo pip3 install --upgrade adafruit-python-shell
+4.  wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+5.  sudo python3 raspi-blinka.py
+6.  -- reboot --
+7.  cd to project folder and activate virtualenv
+8.  pip3 install adafruit-circuitpython-dht
+
