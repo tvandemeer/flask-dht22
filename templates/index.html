@@ -8,12 +8,12 @@
     <div class="cell text-center" style="margin-top:20px;">
         <h4>Temperatuur</h4>
     </div>
-    <div class="cell medium-3" style="margin-top:20px;">
+    <div class="cell medium-4" style="margin-top:20px;">
         <div id="temp">
         </div>
     </div>
-    <div class="cell medium-9" style="margin-top:20px;">
-        <canvas id="tempHist" class="responsive-canvas" height="350">
+    <div class="cell medium-8" style="margin-top:20px;">
+        <canvas id="tempHist" class="responsive-canvas" style="height:350px;">
         </canvas>
     </div>
 </div>
@@ -22,12 +22,12 @@
     <div class="cell text-center" style="margin-top:20px;">
         <h4>Luchtvochtigheid</h4>
     </div>
-    <div class="cell medium-3" style="margin-top:50px;">
+    <div class="cell medium-4" style="margin-top:50px;">
         <div id="hum">
         </div>
     </div>
-    <div class="cell medium-9" style="margin-top:20px;">
-        <canvas id="humHist" class="responsive-canvas" height="350">
+    <div class="cell medium-8" style="margin-top:20px;">
+        <canvas id="humHist" class="responsive-canvas" style="height:350px;">
         </canvas
     </div>
 </div>
@@ -39,4 +39,21 @@
 <script>
 {% include 'history.js' %}
 </script>
+
+<!--
+<script>
+    function resizeCanvas() {
+        let canvas = $('.responsive-canvas');
+        let i = 0;
+        while (i < canvas.length) {
+            canvas[i].style.width = "100%";
+            canvas[i].style.height = canvas[i].style.width * 0.45;
+            i += 1;
+        };
+    }
+
+    window.onresize = resizeCanvas;
+</script>
+-->
+
 {% endblock %}

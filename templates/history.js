@@ -45,26 +45,7 @@ setTimeout(function () {
             }
         }
     });
-    //setInterval(function() {
-        //$.get('/live', function (response) {
-            //if (response[1] > 0) {
-                //chartTemp.data.labels.push(response[0]);
-                //chartTemp.data.datasets[0].data.push(response[1]);
-                //chartTemp.update();
-            //};
-            //if (chartTemp.data.datasets[0].data.length == 100) {
-                //chartTemp.data.datasets[0].data.shift();
-            //};
-            //if (chartTemp.data.labels.length == 100) {
-                //chartTemp.data.labels.shift();
-            //};
-        //});
-    //}, 3000)
-//}, 5000);
 
-
-// Humidity history graph
-//setTimeout(function () {
     var humHist = document.getElementById("humHist").getContext("2d");
     var chartHum = new Chart(humHist, {
         type: 'line',
@@ -120,11 +101,11 @@ setTimeout(function () {
                 chartTemp.update();
             };
 
-            if (chartTemp.data.datasets[0].data.length == 100) {
+            if (chartTemp.data.datasets[0].data.length == 200) {
                 chartTemp.data.datasets[0].data.shift();
             };
 
-            if (chartTemp.data.labels.length == 100) {
+            if (chartTemp.data.labels.length == 200) {
                 chartTemp.data.labels.shift();
             };
 
@@ -134,11 +115,11 @@ setTimeout(function () {
                 chartHum.update();
             };
 
-            if (chartHum.data.datasets[0].data.length == 100) {
+            if (chartHum.data.datasets[0].data.length == 200) {
                 chartHum.data.datasets[0].data.shift();
             };
 
-            if (chartHum.data.labels.length == 100) {
+            if (chartHum.data.labels.length == 200) {
                 chartHum.data.labels.shift();
             };
         });
