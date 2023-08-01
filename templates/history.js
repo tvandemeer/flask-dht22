@@ -42,7 +42,8 @@ setTimeout(function () {
                 legend: {
                     display: false
                 }
-            }
+            },
+            tension: 0.18 
         }
     });
 
@@ -89,11 +90,11 @@ setTimeout(function () {
                 legend: {
                     display: false
                 }
-            }
+            },
+            tension: 0.18 
         }
     });
     setInterval(function() {
-        // ADJUST TO UPDATE chartTemp AND chartHum!!!
         $.get('/live', function (response) {
             if (response[1] > 0) {
                 chartTemp.data.labels.push(response[0]);
@@ -108,6 +109,7 @@ setTimeout(function () {
             if (chartTemp.data.labels.length == 200) {
                 chartTemp.data.labels.shift();
             };
+            //console.log('chartTemp: ' + chartTemp.data.datasets[0].data.length)
 
             if (response[2] < 100000) {
                 chartHum.data.labels.push(response[0]);
@@ -122,6 +124,7 @@ setTimeout(function () {
             if (chartHum.data.labels.length == 200) {
                 chartHum.data.labels.shift();
             };
+            //console.log('chartHum: ' + chartHum.data.datasets[0].data.length)
         });
     }, 3000)
-}, 7000);
+}, 6000);

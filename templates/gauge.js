@@ -8,15 +8,6 @@ var tempGauge = new JustGage({
     label: 'Temperatuur (graden Celsius)'
 });
 
-//setInterval(() => {
-    //$.get('/live', function(response) {
-        //if (response[1] > 0) {
-            //console.log(response[1]);
-            //tempGauge.refresh(response[1]);
-        //};
-    //});
-//}, 3000)
-
 var humGauge = new JustGage({
     id: "hum",
     value: 0,
@@ -26,15 +17,6 @@ var humGauge = new JustGage({
     gaugeWidthScale: 0.6,
     label: 'Luchtvochtigheid (%)'
 });
-
-//setInterval(() => {
-    //$.get('/live', function(response) {
-        //if (response[2] < 100000) {
-            //console.log(response[2]);
-            //humGauge.refresh(response[2]);
-        //};
-    //});
-//}, 3000)
 
 setInterval(function () {
     $.get('/live', function (response) {
