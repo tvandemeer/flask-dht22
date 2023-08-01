@@ -8,6 +8,7 @@
         <title>justgage</title>
         {% endblock %}
         <link rel="stylesheet" href="{{ url_for('static', filename='css/foundation/foundation.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/beefup/jquery.beefup.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
     </head>
     <body>
@@ -20,8 +21,14 @@
         <script src="{{ url_for('static', filename='js/justgage/raphael-min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/justgage/justgage.min.js') }}"></script>
         <script type="module" src="{{ url_for('static', filename='js/chartjs/chart.umd.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/beefup/jquery.beefup.min.js') }}"></script>
         <script>
             $(document).foundation();
+        </script>
+        <script>
+            $(function() {
+                $('.beefup').beefup();
+            });
         </script>
 
         {% block content %}

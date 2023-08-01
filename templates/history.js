@@ -14,14 +14,14 @@ setTimeout(function () {
             responsive: false,
             scales: {
                 y: {
-                    //min: 23.0,
-                    //max: 27.0,
+                    min: 20.0,
+                    max: 28.0,
                     title: {
                         display: true,
                         text: 'graden Celsius'
                     },
                     ticks: {
-                        stepSize: 0.5,
+                        stepSize: 1.0,
                         precision: 1,
                         autoSkip: false
                     }
@@ -43,7 +43,7 @@ setTimeout(function () {
                     display: false
                 }
             },
-            tension: 0.18 
+            tension: 0.5 
         }
     });
 
@@ -62,14 +62,14 @@ setTimeout(function () {
             responsive: false,
             scales: {
                 y: {
-                    //min: 40.0,
-                    //max: 70.0,
+                    min: 20.0,
+                    max: 80.0,
                     title: {
                         display: true,
                         text: 'procent'
                     },
                     ticks: {
-                        stepSize: 0.5,
+                        stepSize: 10.0,
                         precision: 1,
                         autoSkip: false
                     }
@@ -91,7 +91,7 @@ setTimeout(function () {
                     display: false
                 }
             },
-            tension: 0.18 
+            tension: 0.5 
         }
     });
     setInterval(function() {
@@ -102,11 +102,11 @@ setTimeout(function () {
                 chartTemp.update();
             };
 
-            if (chartTemp.data.datasets[0].data.length == 200) {
+            if (chartTemp.data.datasets[0].data.length == 300) {
                 chartTemp.data.datasets[0].data.shift();
             };
 
-            if (chartTemp.data.labels.length == 200) {
+            if (chartTemp.data.labels.length == 300) {
                 chartTemp.data.labels.shift();
             };
             //console.log('chartTemp: ' + chartTemp.data.datasets[0].data.length)
@@ -117,11 +117,11 @@ setTimeout(function () {
                 chartHum.update();
             };
 
-            if (chartHum.data.datasets[0].data.length == 200) {
+            if (chartHum.data.datasets[0].data.length == 300) {
                 chartHum.data.datasets[0].data.shift();
             };
 
-            if (chartHum.data.labels.length == 200) {
+            if (chartHum.data.labels.length == 300) {
                 chartHum.data.labels.shift();
             };
             //console.log('chartHum: ' + chartHum.data.datasets[0].data.length)

@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "beefup": "^1.4.10",
     "chart.js": "^4.3.2",
     "foundation-sites": "^6.7.5",
     "justgage": "^1.6.1",

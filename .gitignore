@@ -3,4 +3,5 @@ package-lock.json
 __pycache__/
 raspi-blinka.py
 .venv/
+*.swp
 
