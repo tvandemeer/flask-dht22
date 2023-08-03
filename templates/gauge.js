@@ -1,8 +1,8 @@
 var tempGauge = new JustGage({
     id: "temp",
     value: 0,
-    min: 23,
-    max: 27,
+    min: 20,
+    max: 28,
     decimals: 1,
     gaugeWidthScale: 0.6,
     label: 'Temperatuur (graden Celsius)'
@@ -11,8 +11,8 @@ var tempGauge = new JustGage({
 var humGauge = new JustGage({
     id: "hum",
     value: 0,
-    min: 0,
-    max: 100,
+    min: 20,
+    max: 80,
     decimals: 0,
     gaugeWidthScale: 0.6,
     label: 'Luchtvochtigheid (%)'
