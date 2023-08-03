@@ -5,9 +5,11 @@ import board
 from random import random
 import json
 from time import time, localtime
+from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
+app.debug = True
 api = Api(app)
 
 dht22 = adafruit_dht.DHT22(board.D18, use_pulseio=False)
@@ -38,5 +40,5 @@ api.add_resource(Live, '/live')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 

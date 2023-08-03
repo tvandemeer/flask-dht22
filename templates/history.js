@@ -102,11 +102,11 @@ setTimeout(function () {
                 chartTemp.update();
             };
 
-            if (chartTemp.data.datasets[0].data.length == 300) {
+            if (chartTemp.data.datasets[0].data.length == 360) {
                 chartTemp.data.datasets[0].data.shift();
             };
 
-            if (chartTemp.data.labels.length == 300) {
+            if (chartTemp.data.labels.length == 360) {
                 chartTemp.data.labels.shift();
             };
             //console.log('chartTemp: ' + chartTemp.data.datasets[0].data.length)
@@ -117,14 +117,14 @@ setTimeout(function () {
                 chartHum.update();
             };
 
-            if (chartHum.data.datasets[0].data.length == 300) {
+            if (chartHum.data.datasets[0].data.length == 360) {
                 chartHum.data.datasets[0].data.shift();
             };
 
-            if (chartHum.data.labels.length == 300) {
+            if (chartHum.data.labels.length == 360) {
                 chartHum.data.labels.shift();
             };
             //console.log('chartHum: ' + chartHum.data.datasets[0].data.length)
         });
-    }, 3000)
-}, 6000);
+    }, 10000)
+}, 5000);
